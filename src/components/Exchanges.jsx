@@ -15,7 +15,7 @@ const Exchanges = () => {
   if (isFetching) return <Loader />;
 
   return (
-    <>
+    <React.Fragment>
       <Row>
         <Col span={6}>Exchanges</Col>
         <Col span={6}>24h Trade</Col>
@@ -24,7 +24,7 @@ const Exchanges = () => {
       </Row>
       <Row>
         {exchangesList.map((exchange) => {
-         return <Col span={24}>
+         return <Col span={24} key={exchange.id}>
             <Collapse>
               <Panel key={exchange.id}
                 showArrow={false}
@@ -45,7 +45,7 @@ const Exchanges = () => {
           </Col>;
       })}
       </Row>
-    </>
+    </React.Fragment>
   );
 };
 
